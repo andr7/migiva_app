@@ -107,7 +107,7 @@ class TurnstileControlButtons extends StatelessWidget{
       ),
     );
 
-    /*final text_buttons_bus = Column(
+    final text_buttons_abus = Column(
       children: <Widget>[
         Container(
           decoration: new BoxDecoration(
@@ -121,7 +121,7 @@ class TurnstileControlButtons extends StatelessWidget{
         ),
         buttons_controls_bus
       ],
-    );*/
+    );
 
     return Column(
       children: <Widget>[
