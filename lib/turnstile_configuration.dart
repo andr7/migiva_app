@@ -43,16 +43,6 @@ class _TurnstileConfigurationState extends State<TurnstileConfiguration> {
       ),
     );
 
-    final combo_ = TextFormField(
-      //keyboardType: TextInputType.emailAddress,
-      autofocus: false,
-      decoration: InputDecoration(
-        hintText: 'IP',
-        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
-      ),
-    );
-
     final loginButton = Padding(
       padding: EdgeInsets.symmetric(vertical: 16.0),
       child: RaisedButton(
