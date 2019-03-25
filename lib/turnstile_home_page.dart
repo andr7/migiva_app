@@ -18,7 +18,7 @@ class TurnstileHomePage extends StatelessWidget{
             backgroundColor: Colors.green,
           ),
           body: Column(
-            children: <Widget>[
+            children: <Widget>[  
               TurnstileTotalPeople(),
               TurnstileControlButtons()
             ],
