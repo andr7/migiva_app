@@ -7,7 +7,7 @@ class TurnstileControlButtons extends StatelessWidget{
 
     final buttons_control_walking = Container(
       margin: EdgeInsets.only(
-          top: 10.0
+          top: 5.0
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -25,7 +25,7 @@ class TurnstileControlButtons extends StatelessWidget{
       children: <Widget>[
         Container(
           margin: EdgeInsets.only(
-              top: 10.0,
+              //top: 10.0,
               left: 20.0,
               right: 20.0
           ),
@@ -39,6 +39,12 @@ class TurnstileControlButtons extends StatelessWidget{
           ),
         ),
         buttons_control_walking
+      ],
+    );
+
+    final text_buttons_bus = Column(
+      children: <Widget>[
+
       ],
     );
 
@@ -79,7 +85,6 @@ class TurnstileControlButtons extends StatelessWidget{
         ],
       );
 
-
     final buttons_controls_bus = Container(
       margin: EdgeInsets.only(
           top: 10.0
@@ -102,16 +107,39 @@ class TurnstileControlButtons extends StatelessWidget{
       ),
     );
 
-    final text_buttons_bus = Column(
+    /*final text_buttons_bus = Column(
       children: <Widget>[
-        texts_bus_bloquear,
+        Container(
+          decoration: new BoxDecoration(
+              border: Border.all(color: Colors.red)
+          ),
+          padding: EdgeInsets.only(
+              top: 5.0,
+              bottom: 5.0
+          ),
+          child: texts_bus_bloquear,
+        ),
         buttons_controls_bus
       ],
-    );
+    );*/
 
     return Column(
       children: <Widget>[
-        text_buttons_walking,
+        Container(
+          decoration: new BoxDecoration(
+            border: Border.all(color: Colors.red)
+          ),
+          margin: EdgeInsets.only(
+            top: 10.0,
+            left: 20.0,
+            right: 20.0
+          ),
+          padding: EdgeInsets.only(
+            top: 3.0,
+            bottom: 5.0
+          ),
+          child: text_buttons_walking,
+        ),
         text_buttons_bus
       ],
     );

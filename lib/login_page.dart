@@ -9,35 +9,55 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  List _companies = ["Andrea", "Ozblu", "Buenos Muchachos"];
+  List<DropdownMenuItem<String>> _dropDownMenuItems;
+  String _selectedCompany;
 
   bool isChecked = false;
 
+  void initState() {
+    _dropDownMenuItems = buildAndGetDropDownMenuItems(_companies);
+    _selectedCompany = _dropDownMenuItems[0].value;
+    super.initState();
+  }
+
+  List<DropdownMenuItem<String>> buildAndGetDropDownMenuItems(List fruits) {
+    List<DropdownMenuItem<String>> items = new List();
+    for (String fruit in fruits) {
+      items.add(new DropdownMenuItem(value: fruit, child: new Text(fruit)));
+    }
+    return items;
+  }
+
+  void changedDropDownItem(String selectedFruit) {
+    setState(() {
+      _selectedCompany = selectedFruit;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-
     final logo = Hero(
       tag: 'hero',
       child: Image.asset('images/logo_migiva.png'),
     );
-
-    /*final company = new DropdownButton<String>(
-      value: dropdownValue,
-      onChanged: (String newValue) {
-        setState(() {
-          dropdownValue = newValue;
-        });
-      },
-      items: <String>['One', 'Two', 'Free', 'Four']
-          .map<DropdownMenuItem<String>>((String value) {
-        return DropdownMenuItem<String>(
-          value: value,
-          child: Text(value),
-        );
-      })
-          .toList(),
-    );*/
-
-    //final company = '';
+    
+    final combo_company = Container(
+      //width: 50.0,
+      padding: EdgeInsets.only(
+        left: 50.0,
+        right: 50.0
+      ),
+      child: DropdownButton(
+        isExpanded: true,
+        style: TextStyle(
+          color: Colors.red
+        ),
+        value: _selectedCompany,
+        items: _dropDownMenuItems,
+        onChanged: changedDropDownItem,
+      ),
+    );
 
     final user = TextFormField(
       keyboardType: TextInputType.emailAddress,
@@ -88,7 +108,7 @@ class _LoginPageState extends State<LoginPage> {
               },
             ),
             Text(
-              "Recordar contraseña",
+              "Mantenerme Conectado",
               style: new TextStyle(color: Colors.green),
             ),
           ]
@@ -101,9 +121,7 @@ class _LoginPageState extends State<LoginPage> {
         '@Todos los derechos reservados',
         style: TextStyle(color: Colors.black54),
         textAlign: TextAlign.center,
-
       ),
-
     );
 
     return Scaffold(
@@ -115,7 +133,7 @@ class _LoginPageState extends State<LoginPage> {
           children: <Widget>[
             logo,
             SizedBox(height: 70.0),
-            //company,
+            combo_company,
             SizedBox(height: 20.0),
             user,
             SizedBox(height: 8.0),
