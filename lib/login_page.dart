@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:migiva_app/turnstile_home_page.dart';
+import 'turnstile_configuration.dart';
+import 'home_page.dart';
 
 class LoginPage extends StatefulWidget {
-  static String tag = 'turnstile-home-page';
+  //static String tag = 'turnstile-home-page';
+  //static String tag = 'turnstile_configuration';
+  static String tag = 'home-page';
+
 
   @override
   _LoginPageState createState() => new _LoginPageState();
@@ -41,17 +46,17 @@ class _LoginPageState extends State<LoginPage> {
       tag: 'hero',
       child: Image.asset('images/logo_migiva.png'),
     );
-    
+
     final combo_company = Container(
       //width: 50.0,
       padding: EdgeInsets.only(
-        left: 50.0,
-        right: 50.0
+          left: 50.0,
+          right: 50.0
       ),
       child: DropdownButton(
         isExpanded: true,
         style: TextStyle(
-          color: Colors.red
+            color: Colors.lightBlueAccent
         ),
         value: _selectedCompany,
         items: _dropDownMenuItems,
@@ -88,7 +93,9 @@ class _LoginPageState extends State<LoginPage> {
           borderRadius: BorderRadius.circular(24),
         ),
         onPressed: () {
-          Navigator.of(context).pushNamed(TurnstileHomePage.tag);
+          Navigator.of(context).pushNamed(HomePage.tag);
+          //Navigator.of(context).pushNamed(TurnstileHomePage.tag);
+          //Navigator.of(context).pushNamed(TurnstileConfiguration.tag);
         },
         padding: EdgeInsets.all(12),
         color: Colors.lightBlueAccent,

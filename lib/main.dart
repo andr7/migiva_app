@@ -1,19 +1,23 @@
 import 'package:flutter/material.dart';
-import 'turnstile_home_page.dart';
 import 'login_page.dart';
+import 'turnstile_home_page.dart';
+import 'turnstile_configuration.dart';
+import 'home_page.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   final routes = <String, WidgetBuilder>{
     LoginPage.tag: (context) => LoginPage(),
-    TurnstileHomePage.tag: (context) => TurnstileHomePage(),
+    HomePage.tag: (context) => HomePage(),
+    //TurnstileHomePage.tag: (context) => TurnstileHomePage(),
+    //TurnstileConfiguration.tag: (context) => TurnstileConfiguration(),
   };
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      //debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.lightBlue,
         fontFamily: 'Nunito',
